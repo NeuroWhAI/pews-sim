@@ -1,6 +1,6 @@
 # pews-sim
 
-PEWS Client용 시뮬레이션 데이터 생성기.
+[PEWS Client](https://github.com/NeuroWhAI/PewsClient)용 시뮬레이션 데이터 생성기.
 
 ## Example
 
@@ -21,3 +21,5 @@ PEWS Client용 시뮬레이션 데이터 생성기.
 > 946684801: 2000-01-01 00:00:01 UTC  
 > ...  
 > ID: 2020123456, Start time: 20000101090002  
+
+![Demo](res/demo.png)
