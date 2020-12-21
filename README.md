@@ -13,8 +13,9 @@
 > Intensity: 4  
 > Decay pow: 1.7  
 > Decay rate: 0.02  
+> Station Decay rate: 0.05  
 > Earthquake: 3.5M, 10.0km, MMI-4  
-> Decay Pow: 1.7, Rate: 0.02  
+> Decay Pow: 1.7, Rate: 0.02(Stn: 0.05)  
 > Description: Test  
 > Phase 2 time: 12  
 > Phase 3 time: 120  
