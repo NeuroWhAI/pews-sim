@@ -89,9 +89,9 @@ struct Stn {
 }
 
 impl Stn {
-    fn update(&mut self) {
+    fn update(&mut self, decay: f64) {
         if self.mmi_gage > 0.0 {
-            self.mmi_gage -= self.mmi_gage * (0.05 * (0.5 + rand::random::<f64>() * 0.8));
+            self.mmi_gage -= self.mmi_gage * (decay * (0.5 + rand::random::<f64>() * 0.8));
             if self.mmi_gage < 0.0 {
                 self.mmi_gage = 0.0;
             }
@@ -172,13 +172,15 @@ fn main() {
     let decay_pow: f64 = read!();
     print_flush("Decay rate: ");
     let decay_rate: f64 = read!();
+    print_flush("Station Decay rate: ");
+    let stn_decay_rate: f64 = read!();
     println!(
         "Earthquake: {:.1}M, {:.1}km, MMI-{}",
         magnitude,
         depth,
         intensity.floor()
     );
-    println!("Decay Pow: {}, Rate: {}", decay_pow, decay_rate);
+    println!("Decay Pow: {}, Rate: {}(Stn: {})", decay_pow, decay_rate, stn_decay_rate);
 
     print_flush("Description: ");
     let desc: String = read!();
@@ -335,7 +337,7 @@ fn main() {
         b_file.write_all(&bytes).unwrap();
 
         for stn in &mut stations {
-            stn.update();
+            stn.update(stn_decay_rate);
         }
 
         println!("{}: {}", time.timestamp(), time);
