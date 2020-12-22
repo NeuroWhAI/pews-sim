@@ -183,8 +183,8 @@ fn main() {
     println!("Decay Pow: {}, Rate: {}(Stn: {})", decay_pow, decay_rate, stn_decay_rate);
 
     print_flush("Description: ");
-    let desc: String = read!();
-    let desc = "(SIM) ".to_string() + &desc;
+    let desc: String = read!("\n{}\n"); // 이전 엔터 무시하고 입력 완료 엔터까지 받음.
+    let desc = "(SIM) ".to_string() + desc.trim();
     let id = 2020123456;
 
     print_flush("Phase 2 time: ");
